@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Classification Model</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h2><strong>Welcome to Card Classification Model</strong></h2>
+            <hr>
+            <form id="upload-form" method="POST" action="/predict" enctype="multipart/form-data">
+                <label for="image-upload" class="upload-label">Choose a card image:</label>
+                <input type="file" id="image-upload" name="image" accept="image/*" required>
+                <button type="submit">Predict</button>
+            </form>
+
+            {% if prediction %}
+                <div id="result" class="output-box">
+                    <p><strong>Prediction:</strong> {{ prediction }}</p>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+</body>
+</html>
+
